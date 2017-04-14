@@ -1,6 +1,7 @@
 package se.franke.fastmedian;
 
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -38,7 +39,7 @@ public class Stats {
     }
 
     private static Map<Integer, Long> groupByValue(final IntStream values) {
-        return values.boxed().parallel().collect(groupingBy(identity(), Collectors.counting()));
+        return values.boxed().parallel().collect(groupingBy(identity(), TreeMap::new, Collectors.counting()));
     }
 
     private static boolean sizeIsOdd(final long amountOfValues) {

@@ -28,6 +28,12 @@ public class StatsTest {
     }
 
     @Test
+    public void negativeNumbersSuccess() {
+        int result = Stats.median(IntStream.rangeClosed(-1, 1));
+        assertEquals(0, result);
+    }
+
+    @Test
     public void oddStreamSuccess() {
         IntStream input = IntStream.of(4, 1, 6, 3, 7, 8, 7);
         int result = Stats.median(input);
