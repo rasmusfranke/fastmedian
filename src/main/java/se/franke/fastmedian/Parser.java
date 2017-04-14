@@ -13,7 +13,7 @@ public class Parser {
 
     public static void main(String[] args) throws IOException {
         isTrue(args.length == 1,
-                "A file must be specified with an odd number of line separated separated integers 0 < i <= 1000");
+                "A file must be specified with an odd number of line separated separated integers");
         try (Stream<String> lines = Files.lines(Paths.get(args[0]))) {
             IntStream numbersStream = lines.mapToInt(Integer::valueOf);
 

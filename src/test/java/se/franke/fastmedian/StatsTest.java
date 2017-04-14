@@ -23,11 +23,6 @@ public class StatsTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void tooLargeFails() {
-        Stats.median(IntStream.rangeClosed(1, 1001));
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void tooSmallFails() {
         Stats.median(IntStream.rangeClosed(0, 1));
     }
