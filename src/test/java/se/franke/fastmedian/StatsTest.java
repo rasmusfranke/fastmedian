@@ -29,7 +29,7 @@ public class StatsTest {
 
     @Test
     public void negativeNumbersSuccess() {
-        int result = Stats.median(IntStream.rangeClosed(-1, 1));
+        int result = Stats.median(IntStream.of(1, -1, 0));
         assertEquals(0, result);
     }
 
